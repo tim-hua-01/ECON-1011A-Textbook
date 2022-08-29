@@ -1,11 +1,52 @@
 \documentclass[12pt,twoside=false,openright,numbers=noenddot]{scrbook}
 \usepackage{evan}
 \usepackage{addons}
+\usepackage{amsmath,amsthm,xfrac,amssymb}
+\usepackage{amsmath,amsthm,xfrac,amssymb}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+
+\newcommand{\pp}{^{-1}}
+\newcommand{\ee}{\epsilon}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\La}{\mathcal{L}}
+\newcommand{\gaa}{\gamma}
+
+\newcommand{\bias}{\textnormal{bias}}
+\newcommand{\mse}{\textnormal{mse}}
+\newcommand{\ttt}{\theta}
+\newcommand{\vvv}{\mathcal{v}}
+\newcommand{\cond}{\xrightarrow{d}}
+\newcommand{\conp}{\xrightarrow{p}}
+\newcommand{\Ex}{\mathrm{E}}
+\newcommand{\htt}{\hat{\theta}}
+\newcommand{\tth}{\tilde{\theta}}
 \usepackage{setspace}
+\usepackage{xcolor}
+\definecolor{timGreen}{RGB}{0,79,12}
+\definecolor{Cites}{RGB}{62,62,199}
+%\usepackage[numbers]{natbib}888
+\usepackage{natbib}
+\bibliographystyle{chicago}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    citecolor = Cites
+}
 \onehalfspacing
 \title{Economics 1011A Textbook}
 \subtitle{Based on class by Prof. Edward L. Glaeser\footnote{Most recent version \href{https://github.com/TheKeveloper/ECON-1011A-Textbook/blob/master/textbook.pdf}{here}.}}
-\author{Kevin Bi and Jimmy Lin}
+\author{Kevin Bi, Jimmy Lin, and Tim Hua}
 
 
 % \includeonly{chapters/ch2_mathreview}
@@ -47,5 +88,6 @@
 \include{chapters/ch10_heterogeneity}
 \include{chapters/ch11_generalequilibrium}
 \include{chapters/ch12_govt_policy}
-
+\include{chapters/ch13_game_theory}
+\bibliography{bib1}
 \end{document}

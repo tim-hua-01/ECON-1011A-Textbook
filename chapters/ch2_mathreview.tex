@@ -462,3 +462,94 @@ Note that we got this without solving for $H^*(w)$ explicitly! The naive approac
 \paragraph{5. Interpret your results.}
 
 What we really care about is the sign of $\partials{H^*}{w}$. If wages increase, do people work more or less? The denominator of our solution must be positive, since it is exactly the expression from our SOC. The sign of the numerator depends on the magnitudes of the different terms. We said in our initial assumptions that $U_Y$ is positive and that $U_{YY}$ is negative. What about the sign of $U_{YL}$? Maybe it's positive: if you are richer, then maybe the marginal utility of leisure is higher, since you can afford more expensive hobbies. Maybe it's negative: if you are richer, maybe you lose appreciation for the everyday moments in life, so the marginal utility of leisure is actually lower. How might we resolve this question with data?
+
+\section{A Taste of Economic Modeling ``Without Economics'': Why do countries go to war?*}
+
+Why do countries go to war? \citet{war} dives into one explanation: the pivotal decision maker (e.g., a monarch, general, or the median voter) may get a disproportionate amount of benefit from the war without bearing much of its costs. Their paper is a great example of how economic thinking and formal mathematics can be applied to a social problem that has very little to do with what most people think of as ``economics.'' In fact, economist tackle problems that has nothing to do with money or markets all the time---this paper on war was published in the \textit{American Economic Review}. The paper also does not use a ton of fancy math---it's all algebra and inequality signs. However, the authors still uncover some very interesting findings.
+
+Through this exercise, I hope you get a taste of how economists tackle a problem and show how assumptions lead to results. The previous section gave an example of mathematical optimization in economics. While that's undoubtedly an essential skill in this class, it's unlikely that many of you would be directly using it in your career\footnote{Although I have personally solved a Langragian to get an explicit form for the Marshallian demand once during my industry internship, so you never know.}. However, the type of formal economic thinking illustrated in this paper and taught in the course will provide a framework that can be applied to a much broader set of problems.
+
+\subsection*{Setup}
+Professor Glaeser has said this many times: Writing a model is like writing a play. You have some actors in a setting, and these actors have some potential actions they can do. Here, our actors are two countries, $i$ and $j$. The action is that either one could decide to go to war with the other. In economics, we like to start with the simplest possible model before slowly adding parts it. 
+
+How should $i$ and $j$ decide whether or not they should declare war? The first thing to consider is the probability of winning. Here, we make our first assumption: the probability that a country wins depends on the wealth of the two countries. Each country starts out with some amount of wealth $w_i$ and $w_j$, and country $i$ will win the war with probability $p_i(w_i,w_j)$ which we also write as $p_{ij}$ (with $p_{ji} = 1 - p_{ij})$. We also assume that $p_i(w_i,w_j)$ is nondecreasing in the first argument and nonincreasing in the second (i.e., having more wealth doesn't hurt, and your opponent having less wealth doesn't hurt). 
+
+Why do we want to make this assumption? First, it's fairly intuitive that wealth levels affect a country's military power. Secondly, we will think about payoffs to war, which we could also think of as a function of wealth levels. Again, we want to start with a simple example, which means that it's a good idea to have as few variables in your model as possible. I also want to note that, since we do not specify the functional form of $p_i(w_i,w_j)$, it is possible that $p_i(w_i,w_j) \neq 0.5$ when $w_j = w_j$. 
+
+After thinking about the probability of winning, we should write down the costs and benefits of winning and losing a war. Here, we make another simplifying assumption: a war would cost a country a fraction $C$ of its wealth regardless of the outcome. The country will gain a fraction $G$ of the other country's wealth if it wins and lose the same proportion $G$ of its wealth if it loses (again, the two are equal to keep the number of variables low). By definition $C + G \leq 1$, since a country cannot lose more than all of its wealth in a war. 
+
+Finally, for each country, we introduce a pivotal decision maker who will decide whether or not a country goes to war. In country $i$, this individual controls a proportion $a_i$ of its wealth. The decision maker may receive a disproportionate amount of the benefits from the war, which we would denote as $a_i'$. With those final pieces in place, we can introduce the conditions where war would occur:
+\begin{itemize}
+    \item Payoff to the decision maker in country $j$ if it does not go to war: $a_j w_j$
+    \item The payoff to the decision maker in country $j$ if it does go to war is slightly complicated because it depends on whether or not they win. Here, we look instead at the expected payoff, which is the payoff if they win multiplied by the probability of winning and the payoff of losing multiplied by the probability of losing: 
+    
+    $$[(1 - C)a_j w_j + Ga'_jw_i]p_{ji} + [(1 - C - G)a_jw_j](1-p_{ji})$$
+\end{itemize}
+We can simplify the last equation to $(1-C)a_jw_j - (1-p_{ji})Ga_jw_j + p_{ji}Ga'_jw_i$. The first part is the fixed cost of going to war, followed by the expected loss and the expected gain. 
+
+Now that we have the payoffs, it's time to think about how to optimize. One way to think about optimization is that we are choosing over different states of the world. In most of this course, the states of the world are options over continuous variables (e.g., how many hours should I work). In this model, the decision maker faces two states of the world: one where they declare war and the other where they don't. In other models, individuals might have to choose between several states of the world, and sometimes picking one state of the world ``unlocks'' new ones and new choices (e.g., After you decide to take 1011a, you have to decide how many hours to spend on the class each week). In all of those cases, economists like to assume that individuals will pick what seems like the best state of the world. In our context, country $j$ will declare war if the expected payoff of war is more than the payoff under peace:
+
+$$(1-C)a_jw_j - (1-p_{ji})Ga_jw_j + p_{ji}Ga'_jw_i > a_jw_j$$
+
+We can simplify this expression to put the benefits of war on the right and the costs on the left
+
+$$p_{ji}Gw_ia'_j > [C + G(1-p_{ji})]a_jw_j$$.
+
+We'll do one last bit of algebra and define the bias of a country's pivotal decision maker $B_j = \frac{a'_j}{a_j}$ and rewrite our condition for war as
+
+\begin{equation}\label{warOg}
+    B_{j} p_{ji}w_i> \left(\frac{C}{G} + 1-p_{ji}\right)w_j
+\end{equation}
+
+(When dealing with discrete choice, we often ignore the case where there is a tie. Sometimes we assume that there is a district uniform distribution over the potential choices when there's a tie (e.g., if there are three options, then there's a $1/3$ chance of each of them occurring). In this paper, we assume that the ``default'' is no war. )
+
+\subsection*{Comparative statics and different war technologies}
+
+Even without calculus, several comparative statics are clear. The ``tendency'' of $j$ wanting to go to war---defined as the range of parameter values where war occurs--- increases as $B_j$ and $G$ increase. It decreases as $C$ increases and is dependent on $C/G$ and $a'_j/a_j$ but not their absolute levels. 
+
+I want to pause for a moment and acknowledge that what we've stated so far isn't groundbreaking and rests on several strong assumptions. Of course people want to go to war more if it costs less and benefits them more\footnote{The findings that war tendency only depends on ratios rests heavily on the fact that this decision agent is risk neutral. That is, they only care about the expected value of the payoff. We'll dive deeper into tastes regarding risk later in the semester. For now, simply note that you might not take a bet that pays you \$1,100 with probability 50\% but costs you \$1,000 with probability 50\% even though it has a positive expected value}. This is not a perfect model! The benefit of writing down a model of the world is that we are able to use it to generate very concrete predictions and modify the model in all sorts of ways to see how changing our assumptions affect the results.
+
+
+Let's start by modifying our model a bit and try out various functional forms for $p_{ji}$\footnote{Economics often talk about functional forms as ``technologies.'' So here we are looking at how different war technologies affect the tendency for war}. 
+
+\subsubsection*{Proportional probability}
+In this case, $p_{ji} = \frac{w_j}{w_j + w_i}$. Substituting in and doing some algebra allows us to simplify equation \ref{warOg} to
+$$\frac{(B_{j} - 1)Gw_i}{w_i + w_j} > C$$
+Here, we can see that an unbiased country would never want to go to war. If a country is biased, then the probability of going to war increases with the opponent's wealth ($w_i$) and decreases in their own wealth. 
+
+In order words, if we believe that a country's decision maker optimize according to the structure of the payoffs outlined and that the functional form for the probability of winning a war is $\frac{w_j}{w_j + w_i}$, then when wars occur it \textit{must} be the case that the decision maker is politically biased. If we believe that politically unbiased leaders will declare war, then one of our assumptions \textit{must} be incorrect. By using mathematics as our language, we can present arguments in a much more precise manner: you may spend all of English class debating what an author is trying to convey in a literary work, but economic models do not leave much space for different interpretations.
+
+\subsubsection*{Fixed probability}
+Suppose that $p_{ji} = \alpha$ regardless of the wealth of the different countries. In that case, we can rewrite equation \ref{warOg} as 
+$$B_j \frac{w_i}{w_j} > \frac{C}{G\alpha} + \frac{1}{\alpha} - 1$$
+
+Here, a country would want to go to war with another one if its wealth is relatively small compared to the wealth of the other country (i.e., small $w_j$ so that $\frac{w_i}{w_j}$ is big). 
+
+One possible example is for organizations that want to wage war against the United States. Your probability of winning is so small that it is essentially invariant with respect to wealth. Thus, we see that it is actually groups that have less wealth and less to lose that attempt terrorist attacks against the US. 
+
+\subsection*{Thinking about two countries}
+Previously, we've been focusing on decision-making by a single country. However, war occurs if either country declares it. Here, I present some results highlighting the interplay between the political bias $B$ and the cost/rewards of wars $\frac{C}{G}$. I also present their corresponding proofs. For those of you who come into the class with a background in proof-based math, feel free to take a stab at proving the results yourself before looking at the solutions. For those seeing proofs the first time, think of proofs as a series of mathematical statements that lead to one another to show some final result. 
+
+\textbf{Proposition 1:}For any fixed $w_i$, $w_j$, and $p_{ji}$
+\begin{enumerate}[(i)]
+    \item If $B_j = B_i = 1$, then at most one country wants to go to war with the other. 
+    \item Given some ratio $\frac{C}{G}$, both countries would want to go to war with each other given sufficiently large $B_j$ and $B_i$.
+    \item Fixing $B_j$ and $B_i$, if $\frac{C}{G}$ is sufficiently large, then no country would want to go to war with the other.
+\end{enumerate}
+\begin{proof}
+    Let $w_{ji} = \frac{w_j}{w_i}$. Using equation \ref{warOg}, we can rewrite the condition that country $i$ declares war on $j$ (notice this time they are swapped)
+    \begin{equation}
+        1 - p_{ji} > \frac{1 + \frac{C}{G}}{1 + B_i w_{ji}}
+    \end{equation}
+    Notice in both equations---here's equation \ref{warOg} again so you don't have to flip back: $B_{j} p_{ji}w_i> \left(\frac{C}{G} + 1-p_{ji}\right)w_j$---$\frac{C}{G}$ is on the right side, and (iii) follows. With some more rearranging, we see that the following condition is required for both countries to want to go to war with each other
+    \begin{equation}\label{both}
+        1- \frac{1 + \frac{C}{G}}{1 + B_i w_{ji}} > p_{ji} > \frac{1 + \frac{C}{G}}{1 + B_jw_{ij}}
+    \end{equation}
+    If we sub in $B_j = B_i = 1$, we see that 
+    $$1- \frac{1 + \frac{C}{G}}{1 + w_{ji}} > \frac{1 + \frac{C}{G}}{1 + w_{ij}}$$
+    is required for war, but this condition could never hold since we can rewrite the above equation as $1 + w_{ij} - \frac{1 + \frac{C}{G}}{1 + w_{ji}} > 1 + \frac{C}{G}$, which simplifies to $-w_{ij} \frac{C}{G} > \frac{C}{G}$, which is impossible. Thus we have shown (i). To see (ii), notice that as $B_i$ approaches infinity, the right side of equation \ref{both} approaches one while as $B_j$ approaches infinity the left side approaches zero, meaning that both sides would want to go to war with each other.
+\end{proof}
+\subsection*{Transfers with and without commitment, as well as coalitions}
+
+The paper also explores scenarios where a country could make a transfer to another to avoid getting invaded. The authors consider the scenario where some third party will be able to enforce a promise not to invade and scenarios without enforcement. They also added more than two countries to the model and explored how countries can form coalitions to avoid war. If you've made it this far, make sure to check out the actual paper on Hollis! 
+

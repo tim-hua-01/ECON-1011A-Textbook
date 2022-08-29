@@ -2,7 +2,7 @@
 
 One of the common problems people face is deciding how much of their money to spend today versus how much to save for tomorrow. This question also has important policy implications. How much should governments supplement savings? How should we expect an aging generation's spending levels to change? Are people saving too much or too little? In this chapter, we offer an approach to analyzing how economic agents optimize their consumption across different time periods.
 
-\section{Two period model}
+\section{Two Period Model}
 We start off by setting up a simple two-period model, which we will denote by the times $t = 1, 2$. The goal of the agent will be to maximize their utility over the two period. 
 
 \subsection*{Model setup}
@@ -149,7 +149,7 @@ With this general setup in mind, we can now find some specific comparative stati
     Notice that the numerator is positive, while the denominator is negative, so we have that $\frac{dc_1}{d\beta} < 0$. Intuitively, this makes sense because if we are more patient, we will save more of our money and spend it in the next period rather than in the current period. 
 \end{description}
 
-\section{Real investment technology}
+\section{Real Investment Technology}
 So far, we have developed a two period model where we have an exogenously given interest rate than agent can borrow or lend at without constraints. However, we will now consider a situation where there are no credit markets. Instead, the agent can invest the money and earn a return for period 2. We make the following adjustments to the model:
 \begin{description}
     \item[No period 2 income] For simplicity, we assume that $y_2 = 0$. This is not strictly necessary, but the analysis where $y_2 > 0$ complicates the model somewhat and does not add much insight. We assume therefore that $y_1 > 0$.
@@ -211,7 +211,7 @@ Why does this condition make sense? The intuition is that we will invest up to t
 
 The idea here is that the agent will \emph{always choose the investment that maximizes net present value}. Because the credit markets allow us to shift income between time periods, our only investment choice is to maximize income. This means that we could solve the optimizations separately by first optimizing the NPV of income by choosing investment, and then choose our consumption taking our NPV of income as given.
 
-\section{Multiple periods and discounting}
+\section{Multiple Periods and Discounting}
 We've worked primarily on a model with only two periods. However, many questions in economics, such as savings over a lifetime, involve more than two periods. In this section, we discuss how to model multi-period models, and with a particular focus on how we discount multiple periods.
 
 \subsection*{Basic multi-period model}
@@ -359,3 +359,34 @@ Unfortunately, solving for the general model here does not tell us anything part
 
 \section*{Recap}
 In this chapter, we have established how individuals make consumption choices across time. Starting off with a simple two period model, we derived the Euler equation relating consumption across time periods, and determined how consumption today is affected by changes in income, the interest rate (the intertemporal slutsky equation), and our level of patience. Next, we generalized to $n$-period models, and introduced two methods of discounting. The exponential discounting model is standard in economics, while the hyperbolic discounting model introduces some present-bias and may force our present-self to consume strategically. Finally, we demonstrated how removing the assumption of separable utility can allow us to model addictive goods, and that addiction for certain goods may in fact be rational. 
+
+\section{Using Different Discount Rates for Effort and Money*}
+
+Suppose you are the government and want to help diabetic individuals exercise, and you're willing to provide them with some mobile phone credits as an incentive at the end of each week. Should you pay them for every day they walk 10,000 steps, or should you pay a fixed amount if they walk 10,000 steps on at least five days of the week? 
+
+An easy way to answer this question is to conduct a randomized control trial, where half the participants get the first contract (payment for every day of compliance), and the other gets the ``time-bundled" contract. Then, we can measure how many steps individuals in each group walked and then pick whichever one is more effective.
+
+However, without a model to guide our thinking, we wouldn't have a story for \textit{why} one contract was better than the other, and this experiment wouldn't tell us anything more about how humans operate. 
+
+In \citet{timestuff}, the authors run an experiment and write a theoretical model for why they think people acted the way they did. One critical component of their model is to have two different discount factors. The discount factor $d^{(t)}$ is how much a dollar in time $t$ is worth to you now, and the discount factor $\delta^{(t)}$ is how much a unit of effort in time $t$ costs you now. In other words, we discount future income and future effort differently. 
+
+Here, I present an illustrative example of their model. Of course, their actual model is far more complicated, but I hope that this example can show you how economists think about problems that involve multiple time periods. 
+
+One last note: Problems like this are often referred to as principle-agent problems, where the principle (in this case, the government) tries to get the agent to do something, and we study whichever incentive, contract, mechanism, etc., can be the most effective. 
+
+\subsection*{Setup}
+For simplicity, I will use she pronouns for the principal and he pronouns for the agent. Suppose that there are two time periods. In each period, agents can either choose whether or not to complete a task. We normalize the utility of not completing the task to $0$, and completing the task costs $e > 0$ units of effort (i.e. it yields utility $-e$), and the principle may reward the agent with some monetary payment $m$. We presume that agents have a linear utility function over money and normalize $e$ such that one unit of money brings exactly as much utility as one unit of effort takes away. Finally, a dollar in time period two is worth $d < 1$ dollars in period one, and a unit of effort in period two costs $\delta < 1$ in period one.
+\subsubsection*{Linear payments}
+Suppose that the principal pays the agent $m$ every day if he completes the task. Then agents will work both days if and only if $m > e$. Thus, it costs the principle $m^{(1)} = 2e$ to induce compliance on both days.
+
+Suppose that, instead of paying the agent every day, the principal pays him at the end of period two. The marginal benefit in period one needs to be $e$ in order to get the agent to comply. Since money in period two is worth $d \dd e$ worth of utility today, the principal would have to pay the agent $\frac{e}{d}$ at the end of period two to induce compliance on the first day. If she wants to have a fixed daily rate and induce compliance on both days, the principal needs to pay the agent $m^{(2)} =\frac{2e}{d} > 2e$. 
+
+\subsubsection*{Time bundled payment}
+Now, suppose that the agent gets paid only if he completes the task on both days, and he gets paid in period two. We first note that if he doesn't work in period one, he will not work in period two since he will receive nothing and will still have to expend the effort cost $e$. If he had worked in period one, then he will work in period two if $m > e$. 
+
+When will the agent work in period one? The present value of the cost of working on both days is $e + \delta e$, and the benefit is $dm$. Thus he will work if $dm - e - \delta e > 0$. Note that if this inequality holds, it implies that $m > e$ (Suppose not and $m \leq e$, then $dm - e < m - e \leq 0$ since  $d < 1$, then $dm- e - \delta e < 0$, reaching a contradiction). It follows that the total payment required to induce two days worth of working is $dm = (1 + \delta)e$ or $m^{(3)} = \frac{1 + \delta}{d}e$. We can see that if $\frac{1 + \delta}{d} < 2$, then it would cost less under the time bundled payment scheme to induce compliance in both periods. 
+
+The key insight here is that that 
+$$\pd{m^{(3)}}{\delta} = \frac{e}{d} > 0 = \pd{m^{(1)}}{\delta} = \pd{m^{(2)}}{\delta}$$
+As the agent discounts future effort more ($\delta$ decreases), it takes less money under the time-bundled contract to induce two days' worth of effort. In the paper, the authors find support for this comparative static, where those who are above median impatient over effort comply six percentage points more than those who are below median.
+

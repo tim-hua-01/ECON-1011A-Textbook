@@ -1,7 +1,7 @@
 \chapter{Consumer Utility}
 So far, we have dealt primarily with firms and how they decide what to produce. Now, we address the other side of the market: consumers and how they decide what to buy and consume. However, we need to find a way to convert this to a maximization problem. With firms, we made the very reasonable assumption that they would try to maximize profits. However, with individuals it is less clear what they would be maximizing. In economics, we assume that individuals are maximizing a \vocab{utility function}, which, in a somewhat tautological definition, is simply whatever an individual maximizes when they are making choices. 
 
-\section{What is utility?}
+\section{What is Utility?}
 You may have seen utility in previous economics courses described as a quantification of the ``happiness'' of individuals, and the utility function describes how many ``utils'' that an individual receives from consuming certain goods. This may be a useful way of thinking about the utility function and can add some valuable insights, but we want a more formal treatment of utility functions that does not rely on something as abstract and non-specific as representing ``happiness.'' However, this leaves us with a series of problems. Can this happiness be measured and observed? Is it the same across people? Can different types of happiness be compared? In this section, we will explore the formal treatment of utility in economics that defines utility in a way that handles some of these issues and avoids others. It will not be important for you to understand every aspect in this approach, and we will avoid delving into the fully formal technicalities of utility, but it may be useful for you understand where utility comes from to know what you can and cannot do with utility functions.
 
 \subsection*{Utility as preference relations}
@@ -15,7 +15,7 @@ We have a fairly reasonable way to judge whether an individual prefers outcome $
     \item $A \precsim B$ means that the agent weakly prefers $B$ to $A$. That is, either $A \prec B$ or $A \sim B$.
     \item $A \succsim B$ means that the agent weakly prefers $A$ to $B$.
 \end{itemize}
-This allows us to rigorously define an individual's preferences by a preference relation on the possible outcomes. However, this alone leaves us with a bit too much room. In order to have useful preferences, we need to assume that agents have \vocab{rational preference}. However, what economists mean by rational preferences is not a normative description of rationality. An economist makes no judgement, for example, on whether prefering chocolate to vanilla ice cream is ``rational.'' Instead, we define rationality by the following two axioms:
+This allows us to rigorously define an individual's preferences by a preference relation on the possible outcomes. However, this alone leaves us with a bit too much room. In order to have useful preferences, we need to assume that agents have \vocab{rational preference}. However, what economists mean by rational preferences is not a normative description of rationality. An economist makes no judgement, for example, on whether preferring chocolate to vanilla ice cream is ``rational.'' Instead, we define rationality by the following two axioms:
 \begin{description}
     \item[Completeness] For any two outcomes $A$ and $B$, exactly one of the following holds: $A \prec B$, $A \succ B$, or $A \sim B$. This axiom tells us two things. The first is that the agent always has some preference between any two outcomes, even if that preference is to be indifferent. The second is that an agent cannot simultaneously prefer $A$ to $B$ and prefer $B$ to $A$.
     \item[Transitivity] For any outcomes $A$, $B$, and $C$, $A \precsim B$ and $B \precsim C$ imply that $A \precsim C$. That is, if we prefer $B$ to $A$ and $C$ to $B$, then we must prefer $C$ to $A$ as well.
@@ -59,7 +59,7 @@ The above is a bit more mathematically formal than required in this course, and 
 
 While this guarantees that there is a continuous utility function, it does not say anything about the differentiability or other properties of the utility function. However, now that we have established the formal mathematical foundations of utility, we can impose more structure to handle the consumer problem specifically. We will do so in the following section.
 
-\section{The consumer's problem}
+\section{The Consumer's Problem}
 The consumer's problem is in some sense the foundation of all economics. It has to do with individuals trying to achieve the best outcome that they can. That is, they are maximizing utility. In this section, we describe the basic setup of the model, the assumptions in the model, and some basic properties from solving the model.
 
 \subsection*{Model setup}
@@ -128,7 +128,7 @@ Rearranging slightly yields,
 \end{align*}
 Notice that if we were to plug in the fact that $b^* = \frac{y - p_a a^*}{p_b}$, this is the exact same first order condition as we obtained through the Lagrangian method. When solving with an explicit functional form, plugging in the constraint can often make it significantly easier to find the optimal choices.
 
-\section{Value function}
+\section{Value Function}
 Now that we know how to find the demand functions of optimizing consumers, we can the \vocab{value function}, which is the value of the utility function under optimal consumption. Mathematically, the value function is defined as,
 \begin{align*}
     v(\vec{p}, y) = u(\vec{x}^*(\vec{p}, y))
@@ -192,7 +192,7 @@ Where $\vec{x}^*$ is the vector of optimal choice of goods. Notice that the valu
     \item[Indirect utility as utility] While so far we have treated utility functions as representing preferences over certain bundles of goods, recall that in general a utility function represents preferences over any set of outcomes. In this sense, the indirect utility function is itself a utility function, representing preferences over prices and incomes. 
 \end{description}
 
-\section{Functional forms and properties}
+\section{Functional Forms and Properties}
 So far we have tried to find methodologies and conditions that must hold for optimizing consumers with general utility functions. However, in this section we will discuss some common functional forms for utility functions, as well as some of their key properties. For each of these, we will deal with the two variable case, but most can be extended to more choices. 
 
 \subsection*{Cobb-Douglas}
@@ -264,5 +264,25 @@ Quasi-linear utility is used when we want utility to be linear in one of our goo
 
    Case 2 is also known as a corner solution, where the normal first order conditions are insufficient and we would spend all our budget on a particular good. These types of corners are possible whenever you have an optimal choice that does not depend on income, because it is then possible to overspend your income. 
    
-   \item[Assumption on budget] Most of the typical analysis we have done depends on having a sufficient budget such that $y > p_b b^*$. If this is the case, then our marginal utility of income is given by $\lambda^* = \frac{1}{p_a}$. That is, with an additional dollar of income, we buy $\frac{1}{p_a}$ of good $a$, which has linear utility. 
+   \item[Assumption on budget] Most of the typical analysis we have done depends on having a sufficient budget such that $y > p_b b^*$. If this is the case, then our marginal utility of income is given by $\lambda^* = \frac{1}{p_a}$. That is, with an additional dollar of income, we buy $\frac{1}{p_a}$ of good $a$, which has linear utility.
+
+\section{Constructing Utility Functions From Consumption Data*}
+We know that utility functions are invariant with respect to monotonic transformations. However, this does not mean that we can't find \emph{some} utility function given some set of preferences. Suppose we have a set of consumption data for an agent for $N$ total goods. The data records how much of the they consumed (often called a ``bundle" of goods), which a vector $x \in \mathbb{R}^N_+$, as well as the prices of these goods $p \in \mathbb{R}^N_{++}$. A utility function \vocab{rationalizes} the dataset when a consumer with that utility function will generate the same consumption choices in the data when given the prices and income.
+
+The construction of a utility function is based on the idea of revealed preference \citep{varianNonparametric}. Suppose that, given your income $y$ and prices $p$ (we will always treat $x$ and $p$ vectors here), you decided to purchase a bundle $x$ when $x'$ was available. Then, we can say that you are at most indifferent between $x$ and $x'$ and cannot prefer $x'$ over $x$. We assume further assume that a consumer spends all of their income (or treat savings as a good that's just like ever other good) and prefers more consumption to less consumption. For a set of data (with consumption and price vectors $\{(x^i,p^i),(x^j, p^j),...(x^m,p^m)\}$), an observation $p^i, x^i$ and some arbitrary bundle $x$, we say that
+\begin{itemize}
+    \item $x^i$ is \textit{directly revealed preferred} to $x$, written $x^iR^0x$, if $p^ix^i \geq p^ix$ (since you are spending the same amount or more money under $p^ix^i$ than you are under $x$, you cannot be worse off with the bundle $x^i$ than $x$)
+    \item $x^i$ is \textit{strictly directly revealed preferred} to $x$, written $x^iP^0x$, if $p^ix^i > p^ix$
+    \item $x^i$ is \textit{revealed preferred} to $x$, written $x^iRx$, if, for some sequence of observations, $p^ix^i \geq p^jx^j$, $p^jx^j \geq p^kx^k$,$...$,$p^mx^m \geq p^mx$. We also call $R$ the transitive closure of the relation $R^0$
+    \item $x^i$ is \text{strictly revealed preferred} to $x$, written $x^iPx$, if there exists observations $x^j$ and $x^k$ such that $x^i R x^j$, $x^jP^0x^l$, $x^lRx$.
+\end{itemize}
+
+A set of data satisfies the \vocab{Generalized Axiom of Revealed Preference (GARP)} if $x^iRx^j$ implies not $x^jP^0x^i$. \citet{afriat}'s theorem show that we can construct a utility function that is nonsatiated, concave, continuous, and monotonic utility function that rationalizes some dataset of consumption choices if and only if a dataset satisfies GARP, and \citet{varianNonparametric} outlines out to construct such a utility function nonparametrically.
+
+\subsection*{What if we don't observe a consumer's entire consumption set?}
+\citet{RPPs} applies the concept of revealed preference directed to prices, as opposed to consumption bundles.\footnote{Afriat's theorem was published in 1967, and this paper was published three days ago. The working paper had been avaliable since 2018, but this goes to show that there are still exciting work done in this field of economics!} The idea here is to use an augmented utility function $U(x, -e)$, where the second term captures how much consumers spent. For any given bundle $x$, customers would prefer to spend as little as possible to acquire it. In our case where we only observe a part of someone's consumption set, $p^i \succ p^j$ when $p^ix^j < p^jx^j$. In other words, I can buy the bundle I got when prices are $p^j$ at a lower prices if prices are $p^i$, and therefore I must prefer $p^i$ to $p^j$.
+
+With this in mind, \citet{RPPs} give an analagous definition for the Generalized Axiom of Price Preference (GAPP) and show that a set of consumption choices is rationalized by a strictly increasing, continuous, and concave augmented utility function $U(x, -p \cdot x)$ if and only if it satifies the Generalized Axiom of Pricer Preference.
+
+
 \end{description}
