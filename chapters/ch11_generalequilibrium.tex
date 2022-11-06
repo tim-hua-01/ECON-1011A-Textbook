@@ -229,3 +229,102 @@ Finally, while Walrasian equilibria are a foundational component of microeconomi
     \item[Perfect information and markets] While this assumption is implicit via the ``Walrasian auctioneer,'' we assume that agents have perfect information about each other's utility functions and prices, and that there are no costs to transactions. This is often not the case in the real world, as most transactions involve one party having more information than the other, and many transactions involve costs beyond price, like travel or negotiation costs. Embedded in this assumption is that agents cannot lie about their demand to try to manipulate the market price to be lower. Each agent reports demand as if their behavior will not change the price.  
 \end{description}
 In the following chapters, we will relax some of these assumptions and examine the role of government policy in correcting imperfect markets, as well as how agents may behave differently in cases of imperfect information or where agents know they can affect the price. 
+
+
+\section{Social Conflict in General Equilibrium*}
+Most economic models assume that property rights are secure. However, this is often not the case. Property rights are threatened by individual criminals, gangs, and also extractive governments. \citet{dalbodalbo} points out that insecure property rights can cause distortions in the economy and make some seemingly unambiguously good things (e.g., A rise in productivity) have adverse consequences. This model is quite different from the other models in our class because we don't explicitly model for agents optimizing. Instead, the model classifies what the general equilibrium of the economy would look like subject to no-arbitrage conditions (i.e., nobody could do something else and get a better outcome).
+
+\citet{dalbodalbo} writes down a model of an economy with an appropriations sector in equilibrium. They are most interested in how this equilibrium shifts in response to various shocks to the system. To give a real-world example: what do we expect to happen to civil war in Columbia when the price of coffee---a labor-intensive good---increases \citep{dube2013commodity}? Our model not only gives us the potential sign of the change but also tells us why this change occurred.
+\subsection*{Setup}
+We start with a three-sector economy. Sectors one are two are productive sectors that produce output $q_1$ and $q_2$ using labor ($L$) and capital ($K$) according to some constant returns to scale function. The price of labor is $w$ and the rental price of capital is $r$. There is a total stock of $\bar{L}$ labor and $\bar{K}$ capital (i.e., fixed factor endowments). Sector $A$ is an appropriation sector that uses only labor ($L_A$) and steals a proportion of total output according to some appropriations function $A(L_A)$, where $A(0) \geq 0$, $A(\bar{L}) \leq 1$, $A'(L_A) > 0$ and $A''(L_A) < 0$. The price of $q_1$ and $q_2$ are \emph{exogenously given}. This is very important to understand: we do not get to pick these prices! Unlike the canonical general equilibrium model you've just seen, we are not solving for prices but taking prices as a parameter. The intuition is that we are modeling some export economy where prices are set by the international market. We normalize the price of good two to be one and the price of good one as $p_1$.
+
+The amount stolen from the two productive industries is thus $A(L_A)(p_1q_1 + q_2)$, or $A(L_A)[w(\bar{L} - L_a) + r\bar{K}]$---in a single-period closed economy without investment, all wages/investment returns are consumed.
+
+Workers decide between entering the productive industry and receive wage $[1 - A(L_A)]w$ or joining the criminal industry and receive wage $\frac{A(L_A)}{L_A}[w(\bar{L} - L_a) + r\bar{K}]$
+\subsection*{Equilibrium}
+Throughout this section, we will focus on equilibriums without specialization (i.e., $q_1 > 0 < q_2$). We define $a_{ij}$ as the minimum amount of factor $j$ needed to produce output in industry $i$ at the minimum cost given $r$ and $w$. That is, $a_{ij}$ will be a function of $r$ and $w$, but we omit it in the notation.\footnote{I will admit that I am personally not very comfortable with this notation. It seemed to come from papers like \citet{Jones1965GE} if you want to dig deeper. If it makes you more comfortable, we could also assume a Leontief production function (i.e., $y_i = \min\{a_{iL}L, a_{iK}K\}$) for our market, and the meaning of $a_{ij}$ becomes apparent. } 
+
+Three sets of conditions capture the general equilibrium of our economy, which is a set of factor prices $w$ and $r$ (once again, $p_1$ is set exogenously), a set of quantities to produce in each sector $q_1$ and $q_2$, and factor use in each sector $(K_1,K_2,L_1,L_2,L_A)$. First, our firms make zero profits:
+\begin{equation}\label{eq:p_1rw}
+    ra_{1K} + wa_{1L} = p_1
+\end{equation}
+\begin{equation}\label{eq:rw2}
+    ra_{2K} + wa_{2L} = 1
+\end{equation}
+Secondly, factor markets must clear (i.e., we use up all of our labor and capital)
+\begin{equation}\label{eq:Kclear}
+    q_1 a_{1K} + q_2 a_{2K} = \bar{K}
+\end{equation}
+\begin{equation}\label{eq:Lclear}
+    q_1 a_{1L} + q_2 a_{2L} =\bar{L} - L_A
+\end{equation}
+Finally, we have this no-arbitrage condition where labor must earn the same in the productive and appropriation industries. The argument here is that if the two differ, then labor will move from one to the other until they balance out.
+\begin{equation}\label{noabitrage}
+    \frac{A(L_A)}{L_A}[w(\bar{L} - L_A) + r\bar{K}] = [1 - A(L_A)]w
+\end{equation}
+
+The first set of equations helps us set wages and rent, the last one determines $L_A$, and the second set gives us the quantity. From there, we can use the production technologies to back out the amount of labor and capital used in each sector. However, we are primarily interested in the size of the appropriations sector and the economy in general.
+
+The factor prices $r$ and $w$ are completely determined based on the first two equations. Note that these are the gross prices, not the actual take-home profits, which need to be multiplied by $(1 - A(L_A))$ to account for appropriation. We can rewrite equation \ref{noabitrage} as $A(L_A) = \frac{wL_A}{w\bar{L} + r\bar{K}}$. Thus, if $A(0) = 0$ and $A'(0) >\frac{w}{w\bar{L} + r\bar{K}}$, then the concavity of the appropriations technology function implies that there is a unique equilibrium with positive amounts of appropriation. If $A(0) > 0$ (perhaps some production is lost regardless of labor participation in appropriations), then the equilibrium is unique.
+
+\begin{figure}[H]\label{fg:equi}
+    \centering
+    \caption{The x-axis here is $L_A$, and the appropriation function is $A(L_A)= \sqrt{L_A}$}
+    \includegraphics[width = 3.5in]{chapters/Conflict Equilibrium.png}
+\end{figure}
+
+\begin{proposition}
+    If there exists an equilibrium without specialization when appropriation is not possible, then there exists an equilibrium with some positive amount of conflict and $L_A$ without specialization if $A'(0)$ is sufficiently large and $A(\bar{L})$ is sufficiently small.
+\end{proposition}
+\begin{proof}
+    First, we note that the condition for no specialization in a world without appropriation is $\frac{a_{2K}}{a_{2L}} < \frac{\bar{K}}{\bar{L}} < \frac{a_{1K}}{a_{1L}}$. If there is appropriation, the condition becomes $\frac{a_{2K}}{a_{2L}} < \frac{\bar{K}}{\bar{L} - L_A} < \frac{a_{1K}}{a_{1L}}$. 
+
+    Thus, in order for there to be an economy without specialization and positive amounts of appropriation, the $L_A^*$ that solves equation \ref{noabitrage} needs to be sufficiently small.
+\end{proof}
+\subsection*{Results}
+As a general equilibrium model, however, the $L_A^*$ that solves the no-arbitrage condition (equation \ref{noabitrage}) goes back into the model and tells us about the conditions in the goods market, specifically:
+\begin{proposition}
+    The appropriations sector increases the production of the capital-intensive good compared to the labor-intensive good.
+\end{proposition}
+\begin{proof}
+    Rearranging equations \ref{eq:Kclear} and \ref{eq:Lclear} yields
+    \begin{align*}
+        q_1 & = \frac{a_{2L}\bar{K} - a_{2K}(\bar{L} - L_A)}{a_{1K}a_{2L} - a_{1L}a_{2K}} \\ 
+        q_2 & = \frac{a_{1K}(\bar{L} - L_A) - a_{1L}\bar{K}}{a_{1K}a_{2L} - a_{1L}a_{2K}}
+    \end{align*}
+    Since all of the $a_{ij}$'s are positive, it's clear that an increase in $L_A$ will increase the numerator of $q_1$ and decrease the numerator of $q_2$. Thus for $\pd{q_1}{L_A} > 0$, we need to show that the denominator is positive, which follows from the assumption that $\frac{a_{2K}}{a_{2L}} < \frac{a_{1K}}{a_{1L}}$.
+\end{proof}
+
+\begin{lemma}
+An increase in the price of the capital-intensive good ($p_1$) will decrease wages and increase rents.
+\end{lemma}
+\begin{proof}
+    Differentiate equations \ref{eq:p_1rw} and \ref{eq:rw2} with respect to $p_1$ on both sides and applying envelope theorem (i.e., $\pd{a_{ij}}{p_1} = 0$ for all $ij$) gives us a system of linear equations. Applying some linear algebra gets us
+    \begin{align*}
+        \frac{dw}{dp_1} & = \frac{-a_{2K}}{a_{1L}a_{2K}-a_{2L}a_{1K}} < 0 \\ 
+        \frac{dr}{dp_1} & = \frac{a_{2L}}{a_{1L}a_{2K}-a_{2L}a_{1K}} > 0
+    \end{align*}
+\end{proof}
+The two key results of the paper are the following:
+\begin{proposition}
+    An increase in the price of the capital-intensive good results in the expansion of the appropriations sector.
+\end{proposition}
+\begin{proof}
+    Starting with $A(L_A) = \frac{L_A}{\bar{L} + r/w\bar{K}}$, we write $L_A$ as a function of $p_1$ and differentiate. Rearranging gets us
+    $$\frac{dL_A}{dp_1} = - \left[A' - \frac{1}{\bar{L} + r/w\bar{K}}\right]^{-1}\left[\frac{KL_A}{(\bar{L} + r/w\bar{K})^2}\frac{d(r/w)}{dp_1}\right]$$
+    From the previous lemma, we know that $\frac{d(r/w)}{dp_1}$ is positive. Thus, in order for $\frac{dL_A}{dp_1} > 0$, the only assumption we need is $A'(L_A) < \frac{1}{\bar{L} + r/w\bar{K}}$. This result follows from the concavity of $A(L_A)$. Looking at figure \ref{fg:equi}, we can see that since $A'(0) >  \frac{1}{\bar{L} + r/w\bar{K}}$, the two lines will not cross until $A'(L_A) < \frac{1}{\bar{L} + r/w\bar{K}}$. The simple intuition is that a rise in $p_1$ decreases the slope of the red line in figure \ref{fg:equi} and increases the equilibrium $L_A$.
+\end{proof}
+\begin{proposition}
+    Neutral technological progress (i.e., an increase in productivity in general, not just the productivity of labor or capital) in the capital-intensive sector results in an increase in conflict
+\end{proposition}
+\begin{proof}
+    One way to think about technological progress is that it now takes less input to produce one unit of output. That is, we now have $ra_{1K}(1- \theta) + wa_{1L}(1-\theta) = p_1$, where $\theta \in (0,1)$. Rearranging shows that the comparative static is equivalent to one where prices increase. 
+\end{proof}
+In the appendix of the paper, the authors write down an appropriations technology that uses both capital and labor. They find that the appropriation sector will expand when $p_1$ increases as long as it is less capital intensive than the economy. The signs switch when it is more capital-intensive than the economy. The idea is that a rise in $p_1$ expands the capital-intensive sector and contracts the labor-intensive sector, pushing individuals into the appropriations sector.
+
+\subsection*{Empirical evidence from civil conflicts in Columbia}
+\citet{dalbodalbo}, like \citet{war}, is a theory paper. All the authors do is write down equations outlining how they think the world works. Other economists could then test their predictions in the real world. \citet{dube2013commodity} look at the effect of income shocks on the civil war in Columbia. They focus on two sectors where the prices are determined globally: Coffee, which is labor-intensive, and Oil, which is capital intensive. They find that lowered coffee prices in the 1990s differentially increased conflict in areas with more coffee cultivation and increased oil prices led to more conflict. This conforms with the predictions of our theoretical model. 
+
+
+
+
