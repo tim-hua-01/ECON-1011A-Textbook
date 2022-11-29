@@ -32,11 +32,17 @@ Broom, M. (2013).
 
 \bibitem[\protect\citeauthoryear{Dal~Bó and Dal~Bó}{Dal~Bó and
   Dal~Bó}{2011}]{dalbodalbo}
-Dal~Bó, E. and P.~Dal~Bó (2011, 08).
+Dal~Bó, E. and P.~Dal~Bó (2011).
 \newblock {Workers, Warriors, and Criminals: Social Conflict in General
   Equilibrium}.
 \newblock {\em Journal of the European Economic Association\/}~{\em 9\/}(4),
   646--677.
+
+\bibitem[\protect\citeauthoryear{De~Loecker, Eeckhout, and Mongey}{De~Loecker
+  et~al.}{2021}]{marketpower}
+De~Loecker, J., J.~Eeckhout, and S.~Mongey (2021, May).
+\newblock Quantifying market power and business dynamism in the macroeconomy.
+\newblock Working Paper 28761, National Bureau of Economic Research.
 
 \bibitem[\protect\citeauthoryear{Deb, Kitamura, Quah, and Stoye}{Deb
   et~al.}{2022}]{RPPs}
@@ -44,6 +50,12 @@ Deb, R., Y.~Kitamura, J.~K.~H. Quah, and J.~Stoye (2022, 08).
 \newblock {Revealed Price Preference: Theory and Empirical Analysis}.
 \newblock {\em The Review of Economic Studies\/}.
 \newblock rdac041.
+
+\bibitem[\protect\citeauthoryear{Dube and Vargas}{Dube and
+  Vargas}{2013}]{dube2013commodity}
+Dube, O. and J.~F. Vargas (2013, 03).
+\newblock {Commodity Price Shocks and Civil Conflict: Evidence from Colombia}.
+\newblock {\em The Review of Economic Studies\/}~{\em 80\/}(4), 1384--1421.
 
 \bibitem[\protect\citeauthoryear{Giuliano and Nunn}{Giuliano and
   Nunn}{2020}]{CulturalPersistance}
@@ -62,6 +74,11 @@ Haan, M.~A., P.~Heijnen, L.~Schoonbeek, and L.~A. Toolsema (2012).
 Jackson, M.~O. and M.~Morelli (2007, September).
 \newblock Political bias and war.
 \newblock {\em American Economic Review\/}~{\em 97\/}(4), 1353--1373.
+
+\bibitem[\protect\citeauthoryear{Jones}{Jones}{1965}]{Jones1965GE}
+Jones, R.~W. (1965).
+\newblock The structure of simple general equilibrium models.
+\newblock {\em Journal of Political Economy\/}~{\em 73\/}(6), 557--572.
 
 \bibitem[\protect\citeauthoryear{Li}{Li}{2017}]{li_2017_OSP}
 Li, S. (2017, November).
