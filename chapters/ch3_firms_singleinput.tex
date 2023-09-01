@@ -1,7 +1,7 @@
 \chapter{Firms with a Single Input}
 We start with one of the simplest economic models: a firm in a perfectly competitive market with a single input. Firms are one of the most basic components of the economy. Firms purchase inputs, convert those inputs into outputs via a production function, and then sell those goods to make a profit. This also gives firms a clear objective function: profit. To make things simple, we assume that the firm only requires one input to produce their good, so the only choice that the firm makes is how much input to purchase. 
 
-\section{Model Setup}
+\section{Model Setup} \label{sec:single_firm_setup}
 We will formalize a mathematical model of the firm. We assume that the firm can choose to hire $L$ units of labor at a wage $w$, which is the price per unit of labor. The firm has a production function, $f(L)$, which takes the units of labor as an input, and returns some unit of product. We assume that the production function is continuous and twice differentiable, increasing, $f'(L) > 0$, and concave $f''(L) < 0$, for any $L$. The firm can then sell each unit of product at a price $p$. The firm takes both $p$ and $w$ as exogenous variables. We can then define the firm's profit, $\pi$, as follows:
 \begin{align}
     \pi(L; p, w) = p f(L) - w L \label{eq:profit_def}
@@ -69,7 +69,7 @@ However, you also know that because each additional worker's contribution is les
 
 At some level, all economic optimization methods boil down to this process. Thinking about what will happen if increase some quantity by an infinitesimal amount, and requiring that doing so makes no difference. 
 
-\section{Specific Production Functions}
+\section{Specific production functions}
 In the above section we showed how to set up and solve for a general production function, $f$. However, because of this generality, we were unable to obtain an explicit formulation of $L^*$. To do so, we need to specify the functional form of $f$, and we offer some examples here of specific functional forms that $f$ could take.
 
 \subsection*{Single-variable Cobb-Douglas}
@@ -198,7 +198,7 @@ In the context of our problem, it tells us that by implicity differentiating bot
     \end{align*}
     Before reading further, try figuring out the sign of $\frac{dL^*}{dp}$ yourself. It should be a fairly straightforward exercise in examining the assumptions we made about $f$ and your result should match with your intuitions.
 
-    By assumption, we have that $f'(L^*) > 0, p > 0$ and we know that $f''(L^*) < 0$, so the entire term must be positive. To check that this accords with our intutions, if the price of the good increases, the firm should produce more of that good because the marginal revenue has increased. 
+    By assumption, we have that $f'(L^*) > 0, p > 0$ and we know that $f''(L^*) < 0$, so the entire term must be positive. To check that this accords with our intuitions, if the price of the good increases, the firm should produce more of that good because the marginal revenue has increased. 
 \end{description}
 
 If you observe both of our comparative statics above, you may notice some similarities between them. For instance, the denominator in both is the same. It turns out that we can say generally how to take a comparative static for a given objective function. We show this below.
@@ -228,7 +228,7 @@ The above yields a general way of finding the comparative static of an optimized
 
 One useful component to notice is that because we have assumed the second order conditions to hold, $F_{xx} < 0$, then the sign of the comparative static is the same as the sign of $F_{xz}$. This is a fairly powerful result that tells us how to very straightforwardly find the comparative statics for a single variable optimization problem. One important thing to note however, is that above, $F$ would be akin to profit, $\pi$, in the firm's problem because it is the objective function. This does \emph{not} hold for the production function $f$. 
 
-\section{Value Function}
+\section{Value function}
 In all of the above, we find that we can write the optimal amount of labor demanded as a function of the exogenous variables. However, we could do the same for all of the other functions. For example, we could define the optimal production function in terms of the exogenous variables as well,
 \begin{align*}
     f^*(w, p) = f(L^*(w, p))
@@ -284,7 +284,7 @@ We will now prove the envelope theorem in the single variable case.
 
 Essentially the envelope theorem says that because we are at an optimum, a small change in our choice variable does not change the value of the overall objective function because of the first order condition. In the context of profit, this tells us that the effect of a change in price is purely the increase in price from the units that we are already producing, $f(L^*)$. Note that this does \emph{not} say that our choice of labor or that our production amount is not changing. Rather, it says that becuase we are at an optimum, the derivative of the profit with respect to $L$ must be 0. This means that a small change in $L$ will not affect the overall profit, so the only effect is the mechanical effect of increasing the price of the current units sold.
 
-\section{Policy Applications}
+\section{Policy applications}
 Now that we have a basic model of the firm setup, we can augment it slightly to add some common policy questions and see how they affect the firm's output. In particular, we can examine ƒixed costs and taxes on firms. For each addition to the basic model, we can ask whether it changes the firm's decisions or its profits. 
 
 \subsection*{Fixed costs}
@@ -345,7 +345,7 @@ Much like the case of a tax on output however, all we have done is change the ef
 \begin{align*}
     p f'(L^*) = w + \tau
 \end{align*}
-Furthermore, notice that $\tau$ is essentially the same as $w$ from a mathematical perspective. That is, we could swap the symbols and the math would remain the smae. This means that the comparative statics are the same, so we can just use our original expression for $\frac{dL^*}{dw}$ (which does not actually depend on $w$),
+Furthermore, notice that $\tau$ is essentially the same as $w$ from a mathematical perspective. That is, we could swap the symbols and the math would remain the same. This means that the comparative statics are the same, so we can just use our original expression for $\frac{dL^*}{dw}$ (which does not actually depend on $w$),
 \begin{align*}
     \frac{dL^*}{d\tau}= \frac{1}{pf''(L^*)}
 \end{align*}
@@ -359,4 +359,4 @@ Finally, we will consider a proportional tax on profits. That is, we impose a ta
 However, notice that if $\tau < 1$, this is just a monotonic transformation of the original profit function, so the optimal choice of $L$ remains the same. This tells us that \emph{firm behavior is unchanged by a tax on profits}. However, you may have seen that economists are often opposed to high corporate income taxes. Why would this be the case if we can impose large taxes with no distortionary effects? This is because our model only has one period, and ignores important factors like investment in future productivity, and the risk of starting a firm in the first place.
 
 \section*{Recap}
-We can now calculate how profit-maximizing firms will choose how many workers to hire, and we have also examined how the firm's labor demand, production, and profit will change in response to variations in price and wages. We have observed these changes not only with specific production functions, but also obtained more general results for how firms should respond to changes. These are already some very powerful economic modeling tools that can formalize existing economic intutions and suggest how we might capture more complex results. In the next chapter, we will develop the model slightly by considering firms who not only choose labor, but multiple inputs. 
+We can now calculate how profit-maximizing firms will choose how many workers to hire, and we have also examined how the firm's labor demand, production, and profit will change in response to variations in price and wages. We have observed these changes not only with specific production functions, but also obtained more general results for how firms should respond to changes. These are already some very powerful economic modeling tools that can formalize existing economic intuitions and suggest how we might capture more complex results. In the next chapter, we will develop the model slightly by considering firms who not only choose labor, but multiple inputs. 

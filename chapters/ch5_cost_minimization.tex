@@ -12,11 +12,11 @@ To set up the cost minimization problem, we need to first establish our producti
     \frac{\partial^2 f}{\partial L^2} &< 0
 \end{align*}
 
-The cost of capital is $r$, and the cost of labor is $w$, with both exogenous. We also have an exogenous quantity, $Q$, of goods that must be produced. The total cost of inputs is given by $wL + rK$. So we can write our minimization problem as,
+The cost of labor is $r$, and the cost of labor is $w$, with both exogenous. We also have an exogenous quantity, $Q$, of goods that must be produced. The total cost of inputs is given by $wL + rK$. So we can write our minimization problem as,
 \begin{align*}
     \min_{K, L} rK  + wL \text{ s.t. } f(K, L) = Q
 \end{align*}
-This says that we are to choose $K$ and $L$ to minimize $rK + wL$ subject to the constraint that the amount we produce, $f(K, L)$, is equal to $Q$. To do so, we use constrained optimization. The Lagrangian is given by
+This says that we are choose $K$ and $L$ to minimize $rK + wL$ subject to the constraint that the amount we produce, $f(K, L)$, is equal to $Q$. To do so, we use constrained optimization. The Lagrangian is given by
 \begin{align*}
     \Lagr(K, L, \lambda) = rK + wL - \lambda(f(K, L) - Q)
 \end{align*}

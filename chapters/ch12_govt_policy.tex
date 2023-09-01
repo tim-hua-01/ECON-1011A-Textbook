@@ -18,7 +18,7 @@ Here, we will consider the problem of how to determine the optimal tax, by follo
 \begin{enumerate}
     \item First, we will determine the government's policy variable. We will let $\tau$ be a tax on revenues, so that if the exogenous price of the good is $p$, and the firm produces $Q$ units of the good, the government receives,
     \begin{align*}
-        \tau p Q
+        (1 - \tau) p Q
     \end{align*}
     Notice that we could also interpret this as a percentage tax on each unit of the good sold. This type of tax is known as an \vocab{\emph{ad valorum}}, or proportional, tax. 
     \item Next, we solve the firm's profit maximization problem. The firm takes $\tau$ as given, has cost function $C(Q)$, and hence solves,
@@ -66,7 +66,7 @@ The key is that the choices of each agent enters into the utility of every other
     \item The government levies an \emph{ad valorum} (per unit) tax $\tau$, and the tax revenue is rebated to citizens in a lump sum, $L$, where $L = \frac{\sum_{i = 1}^N \tau C_i}{N}$. However, we assume that citizens do not internalize the effect of their taxes on $L$. \footnote{This means that agents treat $L$ as exogenous. They do not maximize their utility knowing that consuming more carbon will result in slightly higher tax rebates. This is realistic in the case where $N$ is very large, as any individual's contributions to the total tax revenue will have a negligible effect on their tax rebate.}
     \item Assume that the government's objective is to maximize average utility. Since all $N$ individuals are identical, this also will maximize the utility of every citizen. 
 \end{itemize}
-Our goal will be to choose the optimal tax rate, $\tau^*$ that maximizes the average citizen's utility. Recall from section \ref{sec:govt_policy} that to solve a government optimization problem, we first maximize the utility of each individual treating the government's choice variables as exogenous. 
+Our goal will be to choose the optimal tax rate, $\tau^*$ the maximizes the average citizen's utility. Recall from section \ref{sec:govt_policy} that to solve a government optimization problem, we first maximize the utility of each individual treating the government's choice variables as exogenous. 
 
 \subsubsection*{The individual's maximization problem}
 From the perspective of individual $j$, taxes, the lump sum rebate, and the consumption choices of other individuals $i$ is exogenous. Individual $j$'s maximization problem is therefore:

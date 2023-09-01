@@ -1,25 +1,15 @@
 \chapter{Economic Modeling Overview}
 
 \section{What is Economic Modeling?}
-The goal of an economic model is to take some real world phenomena and represent it in a way that we can analyze it rigorously and tractably. At the most fundamental level, a \vocab{model} is just a set of assumptions that we make. Models can take many forms and you are likely already familiar with some models of real world phenomena. For example, you might construct a model of dining preferences by assuming that the number of people who eat in the dining halls is greater on days where the food is good. Or you might have seen toy models of molecules where the atoms are represented by marshmallows and the bonds between them as toothpicks. With the COVID-19 pandemic, models of infectious disease were used to predict the future number of infectious by assuming how often people interacted with each other,  
+The goal of an economic model is to take some real world phenomena and represent it in a way that we can analyze it rigorously and tractably. At the most fundamental level, a \vocab{model} is just a set of assumptions that we make. Models can take many forms, and you are likely already familiar with some models of real world phenomena. For example, you might construct a model of dining preferences by assuming that the number of people who eat in the dining halls is greater on days where the food is good. Or you might have seen toy models of molecules where the atoms are represented by marshmallows and the bonds between them as toothpicks. With the COVID-19 pandemic, models of infectious disease were used to predict the future number of infectious by assuming how often people interacted with each other,  
 
-Economic models can economic questions such as:
+Economic models try to answer economic questions. Some of these questions might include:
 \begin{itemize}
     \item How does the minimum wage affect the amount of labor hired?
     \item What is the tax rate that maximizes revenue for the government?
     \item How does the interest rate affect savings and investment?
 \end{itemize}
-But it can shed light any questions that where there are actors who make decisions, such as
-\begin{itemize}
-    \item What are the conditions that lead to the agricultural revolution? \citep{origin_of_state}\footnote{See appendix B and D}
-    \item What affects cultural persistence and people's tendency to pass down cultural traditions? \citep{CulturalPersistance}
-    \item How does having limited memory affect our decision making process? \citep{Mullainathanmemory}
-    \item How does bride price affect women's education? \citep{BridePrice}
-    \item How does the existance of a criminal sector affect the macro economy? \citep{dalbodalbo}
-    \item How to best divide a birthday cake? \citep{whyucry}
-\end{itemize}
-
-Importantly, economic models usually focuses on \vocab{positive} economic questions, that is questions about how things in the world work. This is contrast to \vocab{normative} economics,1 which answers how things should be. However, that does not mean that economic models cannot tell us the optimal policy. While an economic model cannot answer what the `best' policy is in a vaccum, it can tell us what the best policy is once we have defined what `best' means. Normative economics examines what it means for a policy to be the `best,' while positive economics tells us how we get there.
+Importantly, economic models usually focus on \vocab{positive} economic questions, that is questions about how things in the world work. This is contrast to \vocab{normative} economics, which answers how things should be. However, that does not mean that economic models cannot tell us the optimal policy. While an economic model cannot answer what the `best' policy is in a vaccum, it can tell us what the best policy is once we have defined what `best' means. Normative economics examines what it means for a policy to be the `best,' while positive economics tells us how we get there.
 
 A model can take many forms, but in this class, we focus on mathematical models of economic behavior. That is, we try to represent the behavior of people, firms, and governments via mathematical functions and see what insights can be gained from such representation. The use of mathematics allows us to formalize our economic reasoning and make precise what conclusions must follow from certain assumptions. 
 
@@ -118,16 +108,28 @@ A common mistake when solving optimization problems is to write $\vec{x}^*$ as a
 
 \section{A Guide to Starred Sections*}
 
-Starred sections are a new addition to the textbook in 2022 to show students how the tools learned in class are applied to various problems by academic economists. They also contain links and other resources for students who want to learn more about a specific subject. These sections are \textbf{completely optional}. You will not be expected to know content from any starred section, but seeing more examples of economic models may be helpful, especially with modeling projects. 
+Starred sections are a new addition to the textbook in 2022 to provides students with examples of real-life models. These sections are \textbf{completely optional}. You will not be expected to know content from any starred section, but seeing more examples of economic models may be helpful, especially with your modeling projects. 
 
-With that in mind, here are three (optional reading) articles on economic theory as a field:
+In section \ref{sec:war}, I give an example of a model about rational war theory from \citet{war}. The model is technically simple, relying only on algebra and inequalities, and serves as an excellent example of how economic modeling could be applied to societal phenomena. Section \ref{sec:garp} gives a brief introduction a technical problem: constructing utility functions from consumption data. Section \ref{sec:diffdiscount} presents a model where individuals have different discount rates over money and effort, and how this affects behavior in a health context. Section \ref{sec:dalbo} examines general equilibrium in a three sector economy: a labor-intensive sector, a captial-intensive sector, and an appropriations sector that steals from the two productive sectors. The existence of the appropriations sector has some counter-intuitive implications: an increase in the productivity of the capital intensive sector could lead to an increase in the size of the appropriations sector. In other words, higher productivity can lead to more crime\footnote{\citet{dube2013commodity} applies the model to Columbia, and their findings support the implications of the model.}. Finally, section \ref{sec:denmark} shows how game theory can help us understand taxation in 16th century Denmark. 
+
+
+\subsection*{Miscellaneous economics references}
+
+Other Textbooks:
 \begin{itemize}
-    \item \href{https://slate.com/business/1997/01/the-accidental-theorist.html}{Krugman on the ``accidental'' theorist}. He walks us through an example model of the macro-economy and shows us that whenever anyone make assumptions and draws conclusions based on those assumptions, they are essentially practicing economy theory, often without being aware of their own assumptions. The article is meant for a general audience, and I would highly recommend taking a look.
-    \item \href{https://www.jstor.org/stable/3805911}{Rubinstein's Dilemmas of an economic theorist}. This is a presentation at the Econometric Society, an organization that consists of (mostly) economic theorists (as opposed to econometricians). It assumes that you are already aware of many concepts commonly taught in a class like Ec 1010a or 14.01. I found it to be a very interesting read on how economic theory should be done, but don't be alamred if you find it hard to understand some of the examples raised. 
+    \item \href{https://mjo.osborne.economics.utoronto.ca/index.php/tutorial/index/1/int/i}{Mathematical Methods for Economic Thoery}. A useful reference.
+    \item \textit{Microeconomic Thoery} by Andreu Mas-Colell, Michael D. Whinston, and Jerry R. Green. Considered the standard graduate-level textbook. 
+\end{itemize}
+
+
+Popular articles on economic theory:
+\begin{itemize}
+    \item \href{https://slate.com/business/1997/01/the-accidental-theorist.html}{Krugman on the ``accidental'' theorist}. 
+    \item \href{https://www.jstor.org/stable/3805911}{Rubinstein's Dilemmas of an economic theorist}.
     \item \href{https://www.jstor.org/stable/25604102}{Hal Varian's How to build an economic model in your spare time}. 
 \end{itemize}
 
-And twitter accounts of economic theorist that you can follow 
+And X/Twitter accounts of economic theorists
 \begin{itemize}
     \item \href{https://twitter.com/ben_golub}{Ben Golub}
     \item \href{https://twitter.com/skominers}{Scott Kominers}
@@ -136,10 +138,10 @@ And twitter accounts of economic theorist that you can follow
     \item \href{https://twitter.com/CaltechEconThry}{CaltechEconThry}
     \item \href{https://twitter.com/AnthonyLeeZhang}{Anthony Lee Zhang}
 \end{itemize}
-As well as some more general economics-related accounts. EconTwitter is a very active place:
+Accounts of journals. Econometrica is generally considered the best economic theory journal\footnote{Although it can also be \href{https://twitter.com/BrianCAlbrecht/status/1616591124420005888?s=20}{very difficult} to understand}.
 \begin{itemize}
-    \item \href{https://twitter.com/HarvardEcon}{Harvard Department of Economics}
-    \item \href{https://twitter.com/ecmaEditors}{Econometrica}
+    \item \href{https://twitter.com/ecmaEditors}{Econometrica} 
+    \item \href{https://twitter.com/qe_editors}{Quantitative Economics}
     \item \href{https://twitter.com/QJEHarvard}{Quarterly Journal of Economics}
     \item \href{https://twitter.com/nberpubs}{Working papers at the National Bureau of Economics}
     \item \href{https://twitter.com/AEAjournals}{Journals of the American Economic Association}
@@ -155,6 +157,6 @@ As well as some more general economics-related accounts. EconTwitter is a very a
     \item \href{https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/}{14.13 Psychology and Economics}
 \end{itemize}
 
-If you have any questions about the papers in the starred section, feel free to post them on Ed or email me at thua@middlebury.edu
+Finally, the \href{https://www.aeaweb.org/research/podcasts}{AEA Research Highlights Podcast} is a great listen. 
 
 \TODO{add examples}

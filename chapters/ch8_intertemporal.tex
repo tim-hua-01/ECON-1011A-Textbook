@@ -2,8 +2,8 @@
 
 One of the common problems people face is deciding how much of their money to spend today versus how much to save for tomorrow. This question also has important policy implications. How much should governments supplement savings? How should we expect an aging generation's spending levels to change? Are people saving too much or too little? In this chapter, we offer an approach to analyzing how economic agents optimize their consumption across different time periods.
 
-\section{Two Period Model}
-We start off by setting up a simple two-period model, which we will denote by the times $t = 1, 2$. The goal of the agent will be to maximize their utility over the two periods. 
+\section{Two period model}
+We start off by setting up a simple two-period model, which we will denote by the times $t = 1, 2$. The goal of the agent will be to maximize their utility over the two period. 
 
 \subsection*{Model setup}
 We assume that there are two periods, and that the agent is making a decision for how much to consume in each period before either period has happened yet. 
@@ -75,7 +75,7 @@ However, so far we have only done a general setup for the comparative static $\f
 With this general setup in mind, we can now find some specific comparative statics. Throughout, we occasionally substitute in $c_2 = (1 + r) (Y - c_1)$. 
 
 \begin{description}
-    \item[Income] First, we will find the effet of a change in total net present value of income, so we can partially differentiate $U_{c_1}$ with respect to $Y$,
+    \item[Income] First, we will find the effect of a change in total net present value of income, so we can partially differentiate $U_{c_1}$ with respect to $Y$,
     \begin{align*}
         U_{c_1 Y} &= \partials{}{Y} \left(u'(c_1) - \beta (1 + r) u'((1 + r)(Y - c_1))\right) \\
         &= - \beta (1 + r)^2 u''((1 + r)(Y - c_1))  \\
@@ -149,7 +149,7 @@ With this general setup in mind, we can now find some specific comparative stati
     Notice that the numerator is positive, while the denominator is negative, so we have that $\frac{dc_1}{d\beta} < 0$. Intuitively, this makes sense because if we are more patient, we will save more of our money and spend it in the next period rather than in the current period. 
 \end{description}
 
-\section{Real Investment Technology}
+\section{Real investment technology}
 So far, we have developed a two period model where we have an exogenously given interest rate than agent can borrow or lend at without constraints. However, we will now consider a situation where there are no credit markets. Instead, the agent can invest the money and earn a return for period 2. We make the following adjustments to the model:
 \begin{description}
     \item[No period 2 income] For simplicity, we assume that $y_2 = 0$. This is not strictly necessary, but the analysis where $y_2 > 0$ complicates the model somewhat and does not add much insight. We assume therefore that $y_1 > 0$.
@@ -211,7 +211,7 @@ Why does this condition make sense? The intuition is that we will invest up to t
 
 The idea here is that the agent will \emph{always choose the investment that maximizes net present value}. Because the credit markets allow us to shift income between time periods, our only investment choice is to maximize income. This means that we could solve the optimizations separately by first optimizing the NPV of income by choosing investment, and then choose our consumption taking our NPV of income as given.
 
-\section{Multiple Periods and Discounting}
+\section{Multiple periods and discounting}
 We've worked primarily on a model with only two periods. However, many questions in economics, such as savings over a lifetime, involve more than two periods. In this section, we discuss how to model multi-period models, and with a particular focus on how we discount multiple periods.
 
 \subsection*{Basic multi-period model}
@@ -311,7 +311,7 @@ To model this problem, we will simplify by assuming that there are $n = 3$ perio
     \end{align*} 
     The Euler equation in this case should be familiar,
     \begin{align*}
-        u'(c_2) = \beta \delta (1 + r) u'(c_3)
+        u'(c_2^) = \beta \delta (1 + r) u'(c_3^)
     \end{align*}
     We will express the solutions as functions of $w$, $c_2(w)$ and $c_3(w)$. Notice that know in this case there is no time inconsistency between periods 2 and 3, because period 3 is the last period so all remaining money will be spent, as planned. The functions $c_2(w)$ and $c_3(w)$ tell us what the period 2 behavior will be if the agent leaves $w$ wealth behind in period 1. Now we can model the behavior of the agent in period $1$. 
     \item[Period 1] The goal of the agent in period 1 is to consume to maximize their current intertemporal utility function, knowing that their future self will actually consume according to $c_2(w)$ and $c_3(w)$. Note however, that the agent in period 1 is only taking into consideration the \emph{behavior} of their future self, not the fact that their period 2 self will be maximizing a different utility function. 
@@ -320,7 +320,7 @@ To model this problem, we will simplify by assuming that there are $n = 3$ perio
     \begin{align*}
         c_1 + \frac{w}{1 + r} = Y
     \end{align*}
-    By plugging in the constraint, we get $c_1 = Y - \frac{w}{1 + r}$, yelding the following optimization problem:
+    By plugging in the constraint, we get $c_1 = Y - \frac{w}{1 + r}$, yielding the following optimization problem:
     \begin{align*}
         \max_{w \in [0, (1 + r) Y]} u\left(Y - \frac{w}{1 + r}\right) + \beta[\delta u(c_2(w)) + \delta^2 u(c_3(w))]
     \end{align*}
@@ -360,11 +360,11 @@ Unfortunately, solving for the general model here does not tell us anything part
 \section*{Recap}
 In this chapter, we have established how individuals make consumption choices across time. Starting off with a simple two period model, we derived the Euler equation relating consumption across time periods, and determined how consumption today is affected by changes in income, the interest rate (the intertemporal slutsky equation), and our level of patience. Next, we generalized to $n$-period models, and introduced two methods of discounting. The exponential discounting model is standard in economics, while the hyperbolic discounting model introduces some present-bias and may force our present-self to consume strategically. Finally, we demonstrated how removing the assumption of separable utility can allow us to model addictive goods, and that addiction for certain goods may in fact be rational. 
 
-\section{Using Different Discount Rates for Effort and Money*}
+\section{Using Different Discount Rates for Effort and Money*}\label{sec:diffdiscount}
 
-Suppose you are the government and want to help diabetic individuals exercise, and you're willing to provide them with some mobile phone credits as an incentive at the end of each week. Should you pay them for every day they walk 10,000 steps, or should you pay a fixed amount if they walk 10,000 steps on at least five days of the week? 
+Suppose you are the government and want to motivate diabetic individuals to exercise. You're planning on awarding people who exercise with some mobile phone credits at the end of each week. Should you pay them for everyday they walk 10,000 steps, or should you pay a fixed amount if they walk 10,000 steps on at least five days of the week? 
 
-An easy way to answer this question is to conduct a randomized control trial, where half the participants get the first contract (payment for every day of compliance), and the other gets the ``time-bundled" contract. Then, we can measure how many steps individuals in each group walked and then pick whichever one is more effective.
+One way to answer this question is to conduct a randomized control trial, where half the participants get the first contract (payment for every day of compliance), and the other gets the ``time-bundled" contract. Then, we can measure how many steps individuals in each group walked and then pick whichever one is more effective.
 
 However, without a model to guide our thinking, we wouldn't have a story for \textit{why} one contract was better than the other, and this experiment wouldn't tell us anything more about how humans operate. 
 
@@ -389,4 +389,3 @@ When will the agent work in period one? The present value of the cost of working
 The key insight here is that that 
 $$\pd{m^{(3)}}{\delta} = \frac{e}{d} > 0 = \pd{m^{(1)}}{\delta} = \pd{m^{(2)}}{\delta}$$
 As the agent discounts future effort more ($\delta$ decreases), it takes less money under the time-bundled contract to induce two days' worth of effort. In the paper, the authors find support for this comparative static, where those who are above median impatient over effort comply six percentage points more than those who are below median.
-
